@@ -1,0 +1,43 @@
+$media-xxs: rem(320);
+$media-xs: rem(576);
+$media-sm: rem(768);
+$media-md: rem(1024);
+$media-lg: rem(1280);
+$media-xl: rem(1440);
+
+@function get-breakpoint($media) {
+
+  @if (global-variable-exists('media-' + $media)) {
+    $map: (
+      'xs': $media-xs,
+      'sm': $media-sm,
+      'md': $media-md,
+      'lg': $media-lg,
+      'xl': $media-xl
+    );
+
+    @each $key, $val in $map {
+
+      @if ($media == $key) {
+
+        @return $val;
+      }
+    }
+  }
+
+  @else {
+
+    @return null;
+  }
+}
+
+@mixin breakpoint($media) {
+  @if ($media) {
+
+    @media only screen and (min-width: get-breakpoint($media)) {
+
+      @content;
+    }
+
+  }
+}

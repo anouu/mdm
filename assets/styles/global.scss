@@ -1,0 +1,67 @@
+@import 'reset.scss';
+
+:root {
+  --font-system: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', arial, sans-serif;
+  --spacing: clamp(16px, calc(2.5vw + 1rem), 46px);
+  --spacing-small: clamp(8px, calc(1vw + 1rem), 24px);
+  --brand-color-1: hsl(60, 1%, 25%);
+  --brand-color-2: hsl(35, 40%, 70%);
+  --brand-color-3: hsl(35, 40%, 90%);
+  --dark-color: hsl(0, 0%, 10%);
+  --light-color: hsl(0, 0%, 100%);
+  --transition-duration: 300ms;
+}
+
+html {
+  font-family: 'Lato', var(--font-system);
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  scroll-behavior: smooth;
+  min-height: 100%;
+}
+
+.title-font {
+  font-family: 'Poppins', var(--font-system);
+}
+
+.button {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all var(--transition-duration) $ease-in-sine;
+  will-change: background, border-color;
+
+  &--simple {
+    padding: rem(10);
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid var(--brand-color-2);
+    font-size: rem(24);
+    color: var(--brand-color-2);
+  }
+
+  &--accent {
+    background-color: var(--brand-color-2);
+    color: var(--light-color);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      --brand-color-2: hsl(35, 40%, 60%);
+    }
+  }
+}

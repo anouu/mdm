@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders properly 1`] = `
+<header class="header"><a class="link title-font">M</a>
+  <div class="actions">
+    <!----> <button title="Ouvrir les paramètres" class="button settings">
+      <div class="material-icons icon">settings</div>
+    </button> <button title="Afficher le mini panier" class="button basket">
+      <div class="material-icons icon">shopping_cart</div>
+      <!---->
+    </button>
+  </div>
+</header>
+`;
